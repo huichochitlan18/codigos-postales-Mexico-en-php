@@ -92,3 +92,16 @@ ORDER BY
     asentamiento.d_asenta;
 
     select * from municipio where idEstado = 21 and numeroMpio = 85
+     select 
+ localidad.`idLocalidad`,
+ localidad.`localidad`,
+ localidad.`cp`,
+ localidad.`idMunicipio`,
+ municipio.`municipio`,
+ estado.`idEstado`,
+ estado.`estado`
+ from localidad 
+ join municipio on localidad.idMunicipio = municipio.idMunicipio
+ join estado on municipio.idEstado=estado.`idEstado`
+ WHERE municipio.municipio LIKE '%zina%'
+--  WHERE localidad.cp = '50010'
